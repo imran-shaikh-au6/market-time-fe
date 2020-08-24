@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { loginUsers } from "../Redux/actions/userAction";
 import { connect } from "react-redux";
-import fire from "../components/firebase/firebase";
 import "./register.css";
 class Login extends Component {
     state = {
@@ -23,17 +22,7 @@ class Login extends Component {
         const data = {
             newUser: newUser,
         };
-        await fire.auth()
-            .signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((u) => {
-                console.log(u);
-            })
-            .catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-            });
+       
         const rgs = this.props.loginUsers(data);
         alert("Logged In Successfully");
         this.props.history.push("/");

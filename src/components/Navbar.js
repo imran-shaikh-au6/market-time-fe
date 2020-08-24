@@ -8,6 +8,7 @@ class Navbar extends Component {
     handleLogout = (e) => {
         e.preventDefault();
         this.props.logoutUser();
+        this.props.history.push("/")
     };
     userDashboard = () => {
         this.props.history.push({

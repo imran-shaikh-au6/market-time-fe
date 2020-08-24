@@ -5,24 +5,19 @@ import {
 } from "./productType";
 import axios from "axios";
 export const getProducts = () => async (dispatch) => {
-    const res = await axios(
-        "/allProduct/1"
-    );
+    const res = await axios("/allProduct/1");
 
     dispatch({ type: GetAllProduct, payload: res.data });
 };
 export const particularProductDetail = (id) => async (dispatch) => {
     const res = await axios.get(`/singleProduct/${id}`);
+    console.log(res.data);
+    // const userId = res.data.data.user;
 
-    const userId = res.data.data.user;
-    const particularProductOwners = await axios.get(
-        `/userProfile/${userId}`
-    );
-
-    dispatch({ type: particularProduct, payload: res.data.data });
+    dispatch({ type: particularProduct, payload: res.data.singleProductData });
     dispatch({
         type: particularProductOwner,
-        payload: particularProductOwners.data,
+        payload: res.data.user,
     });
 };
 export const addPro = (token, data) => async (dispatch) => {

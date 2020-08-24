@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { RegisterUsers, GoogleLoginAuth } from "../Redux/actions/userAction";
 import { connect } from "react-redux";
 import GoogleLogin from "react-google-login";
-import fire from "../components/firebase/firebase";
 import "./register.css";
 class Register extends Component {
     state = {
@@ -40,17 +39,7 @@ class Register extends Component {
         const data = {
             newUser: newUser,
         };
-        await fire.auth()
-            .createUserWithEmailAndPassword(
-                this.state.email,
-                this.state.password
-            )
-            .then((u) => {
-                console.log(u);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
+        
         const rgs = this.props.RegisterUsers(data);
         console.log(rgs);
     };

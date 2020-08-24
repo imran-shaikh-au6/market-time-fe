@@ -5,33 +5,26 @@ import setAuthToken from "./setAuthToken";
 import axios from "axios";
 export const RegisterUsers = (data1) => async (dispatch) => {
     const res = await axios.post(
-        "/user/register",
+        "https://market-time-be.herokuapp.com/user/register",
         data1.newUser
     );
-  
+
     dispatch({ type: RegisterUser, payload: res.data.user });
 };
 export const loginUsers = (data) => async (dispatch) => {
-   
     const data1 = await axios.post(
-        "/user/login",
+        "https://market-time-be.herokuapp.com/user/login",
         data.newUser
     );
-  
+
     setToken(data1.data.token, dispatch);
 };
 export const userProfile = (id) => async (dispatch) => {
-  await axios.get(
-        "/userProfile"
-    );
-
+    await axios.get("/userProfile");
 };
 export const editProfile = (data) => (dispatch) => {
     axios
-        .post(
-            "/user/editprofile",
-            data.editData
-        )
+        .post("/user/editprofile", data.editData)
         .then(async (res) => {
             console.log(res);
             if (res.status === 200) {
@@ -44,10 +37,7 @@ export const editProfile = (data) => (dispatch) => {
 };
 
 export const GoogleLoginAuth = (data) => async (dispatch) => {
-    const res = await axios.post(
-        "/google",
-        data
-    );
+    const res = await axios.post("/google", data);
     setToken(res.data.token, dispatch);
 };
 const setToken = (res, dispatch) => {
