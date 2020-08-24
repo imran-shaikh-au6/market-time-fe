@@ -17,7 +17,7 @@ function SingleProduct(props) {
             const pId = id.split("=")[1];
             console.log(pId);
             const res = await axios.post(
-                `https://market-time-be.herokuapp.com/userEmailDetails/${pId}`
+                `/userEmailDetails/${pId}`
             );
             console.log(res.data.data);
             alert("Email sent");

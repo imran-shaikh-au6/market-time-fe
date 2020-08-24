@@ -13,7 +13,7 @@ class MainUserMyAdds extends Component {
     deletProduct = async (e) => {
         const id = e.target.id;
         await axios.post(
-            `https://market-time-be.herokuapp.com/deleteProduct/${id}`
+            `/deleteProduct/${id}`
         );
 
         alert("Add Deleted Successfully");

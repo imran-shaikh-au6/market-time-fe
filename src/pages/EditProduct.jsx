@@ -18,7 +18,7 @@ class EditProduct extends Component {
 
         
         const datas = await axios.post(
-            "https://market-time-be.herokuapp.com/editproduct",
+            "/editproduct",
             formData
         );
         console.log(datas.data);

@@ -20,7 +20,7 @@ class AddNewPost extends Component {
         e.preventDefault();
         const formData = new FormData(e.target);
         const datas = await axios.post(
-            "https://cors-anywhere.herokuapp.com/https://market-time.herokuapp.com/addProducts",
+            "/addProducts",
             formData
         );
         if (datas.status===200){

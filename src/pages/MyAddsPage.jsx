@@ -12,7 +12,7 @@ class MyAddsPage extends Component {
     };
     async componentDidMount() {
         const fetch = await axios.get(
-            "https://market-time-be.herokuapp.com/userMyPro"
+            "/userMyPro"
         );
         const arr1 = fetch.data;
         const arr2 = arr1.flat();
@@ -20,7 +20,7 @@ class MyAddsPage extends Component {
     }
     async componentWillReceiveProps(){
         const fetch = await axios.get(
-            "https://market-time-be.herokuapp.com/userMyPro"
+            "/userMyPro"
         );
         const arr1 = fetch.data;
         const arr2 = arr1.flat();
