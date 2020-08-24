@@ -7,7 +7,7 @@ export const getProducts = () => async (dispatch) => {
 };
 export const particularProductDetail = (id) => async (dispatch) => {
     const res = await axios.get(
-        `https://cors-anywhere.herokuapp.com/https://market-time.herokuapp.com/singleProduct/${id}`
+        `https://market-time.herokuapp.com/singleProduct/${id}`
     );
    
     const userId= res.data.data.user
