@@ -12,9 +12,7 @@ export const getProducts = () => async (dispatch) => {
     dispatch({ type: GetAllProduct, payload: res.data });
 };
 export const particularProductDetail = (id) => async (dispatch) => {
-    const res = await axios.get(
-        `https://market-time-be.herokuapp.com/singleProduct/${id}`
-    );
+    const res = await axios.get(`/singleProduct/${id}`);
 
     const userId = res.data.data.user;
     const particularProductOwners = await axios.get(
