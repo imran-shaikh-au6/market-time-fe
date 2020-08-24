@@ -5,7 +5,7 @@ import setAuthToken from "./setAuthToken";
 import axios from "axios";
 export const RegisterUsers = (data1) => async (dispatch) => {
     const res = await axios.post(
-        "https://market-time-be.herokuapp.com/user/register",
+        "/user/register",
         data1.newUser
     );
   
@@ -14,7 +14,7 @@ export const RegisterUsers = (data1) => async (dispatch) => {
 export const loginUsers = (data) => async (dispatch) => {
    
     const data1 = await axios.post(
-        "https://market-time-be.herokuapp.com/user/login",
+        "/user/login",
         data.newUser
     );
   
@@ -22,14 +22,14 @@ export const loginUsers = (data) => async (dispatch) => {
 };
 export const userProfile = (id) => async (dispatch) => {
   await axios.get(
-        "https://market-time-be.herokuapp.com/userProfile"
+        "/userProfile"
     );
 
 };
 export const editProfile = (data) => (dispatch) => {
     axios
         .post(
-            "https://market-time-be.herokuapp.com/user/editprofile",
+            "/user/editprofile",
             data.editData
         )
         .then(async (res) => {
@@ -45,7 +45,7 @@ export const editProfile = (data) => (dispatch) => {
 
 export const GoogleLoginAuth = (data) => async (dispatch) => {
     const res = await axios.post(
-        "https://market-time-be.herokuapp.com/google",
+        "/google",
         data
     );
     setToken(res.data.token, dispatch);

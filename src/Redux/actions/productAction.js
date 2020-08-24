@@ -6,7 +6,7 @@ import {
 import axios from "axios";
 export const getProducts = () => async (dispatch) => {
     const res = await axios(
-        "https://market-time-be.herokuapp.com/allProduct/1"
+        "/allProduct/1"
     );
 
     dispatch({ type: GetAllProduct, payload: res.data });
@@ -16,7 +16,7 @@ export const particularProductDetail = (id) => async (dispatch) => {
 
     const userId = res.data.data.user;
     const particularProductOwners = await axios.get(
-        `https://market-time-be.herokuapp.com/userProfile/${userId}`
+        `/userProfile/${userId}`
     );
 
     dispatch({ type: particularProduct, payload: res.data.data });
