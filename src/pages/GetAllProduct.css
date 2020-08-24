@@ -1,23 +1,17 @@
-
-
-body
-{
-    font-family: 'Roboto', sans-serif;
+body {
+    font-family: "Roboto", sans-serif;
 }
-a
-{
+a {
     text-decoration: none;
 }
 .product-card {
     width: 318px;
     height: 500px;
     position: relative;
- 
+
     box-shadow: 0 2px 7px #dfdfdf;
-    margin: 5px ;
-    background: linear-gradient(to right, #b79891, #94716b)
-    
-    
+    margin: 5px;
+    background: linear-gradient(to right, #b79891, #94716b);
 }
 
 .badge {
@@ -38,21 +32,20 @@ a
     justify-content: center;
     height: 250px;
     padding: 5px;
-    background: linear-gradient(to right, #b79891, #94716b)
+    background: linear-gradient(to right, #b79891, #94716b);
 }
 
 .product-tumb img {
     max-width: 100%;
-    max-height: 100%
+    max-height: 100%;
 }
 
 .product-details {
-   padding-left: 5px;
-   padding-right: 5px;
-   margin-bottom: 0px;
-  
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0px;
 }
-.time{
+.time {
     margin: 10px;
 }
 /* .product-catagory {
@@ -77,7 +70,7 @@ a
 .product-details h4 a:hover {
     color: #fbb72c;
 }
-.product-details h4  {
+.product-details h4 {
     padding-top: 15px;
 }
 .product-details p {

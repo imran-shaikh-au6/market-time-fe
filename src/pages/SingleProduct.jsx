@@ -16,9 +16,7 @@ function SingleProduct(props) {
             const id = props.history.location.search;
             const pId = id.split("=")[1];
             console.log(pId);
-            const res = await axios.post(
-                `/userEmailDetails/${pId}`
-            );
+            const res = await axios.post(`/userEmailDetails/${pId}`);
             console.log(res.data.data);
             alert("Email sent");
         } else {

@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import "./navbar.css";
 import { connect } from "react-redux";
 import { logoutUser } from "../Redux/actions/userAction";
-import {withRouter} from "react-router-dom"
-import img from "../images/Market Time.gif"
+import { withRouter } from "react-router-dom";
+import img from "../images/Market Time.gif";
 class Navbar extends Component {
     handleLogout = (e) => {
         e.preventDefault();
         this.props.logoutUser();
-        this.props.history.push("/")
+        this.props.history.push("/");
     };
     userDashboard = () => {
         this.props.history.push({
@@ -16,7 +16,7 @@ class Navbar extends Component {
             state: this.props.user.user.user,
         });
     };
-   
+
     render() {
         const { isAuthenticated } = this.props.user.user;
         console.log(this.props.user.user.user.image);
@@ -53,7 +53,7 @@ class Navbar extends Component {
                                 "border-radius": "50%",
                             }}
                         />
-                        
+
                         {/* <p>Profile</p> */}
                         <span className="spa"> Profile</span>
                     </a>

@@ -22,7 +22,7 @@ class Login extends Component {
         const data = {
             newUser: newUser,
         };
-       
+
         const rgs = this.props.loginUsers(data);
         alert("Logged In Successfully");
         this.props.history.push("/");

@@ -11,11 +11,9 @@ class MyWishList extends Component {
     };
 
     async componentDidMount() {
-        const fetch = await axios.get(
-            "/userWishList"
-        );
+        const fetch = await axios.get("/userWishList");
         // this.setState(fetch.data)
-        console.log(fetch.data)
+        console.log(fetch.data);
 
         const arr2 = fetch.data.flat();
         this.setState({ data: arr2 });
@@ -29,7 +27,10 @@ class MyWishList extends Component {
             if (isEmpty(this.state.data)) {
                 return (
                     <div className="container-fluid">
-                        <img src="https://res.cloudinary.com/dlcckjhpj/image/upload/v1598105518/tenor_vcbjih.gif" alt="img"/>
+                        <img
+                            src="https://res.cloudinary.com/dlcckjhpj/image/upload/v1598105518/tenor_vcbjih.gif"
+                            alt="img"
+                        />
                         <h1>NO Product Added to Favourite List</h1>
                     </div>
                 );

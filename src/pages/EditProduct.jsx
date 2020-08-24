@@ -16,11 +16,7 @@ class EditProduct extends Component {
         const formData = new FormData(e.target);
         formData.append("id", id);
 
-        
-        const datas = await axios.post(
-            "/editproduct",
-            formData
-        );
+        const datas = await axios.post("/editproduct", formData);
         console.log(datas.data);
     };
 

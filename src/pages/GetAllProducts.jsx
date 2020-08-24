@@ -17,13 +17,9 @@ class GetAllProducts extends Component {
     AddToFavo = async (e) => {
         e.preventDefault();
         const productId = e.target.id;
-        
-        
 
         if (localStorage.getItem("jwtToken")) {
-            const res = await axios.post(
-                `/user/addTowishlist/${productId}`
-            );
+            const res = await axios.post(`/user/addTowishlist/${productId}`);
             console.log(res.data.data);
             alert("added to favourite list");
         } else {
@@ -36,11 +32,11 @@ class GetAllProducts extends Component {
             category,
             city,
             date,
-          
+
             photos,
             price,
             title,
-    
+
             _id,
         } = this.props.data;
         if (this.props.loading) {

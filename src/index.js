@@ -6,7 +6,7 @@ import "./index.css";
 //bootswatch.com/darkly/
 import store from "./Redux/store";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router} from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 ReactDOM.render(
     <React.StrictMode>

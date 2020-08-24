@@ -56,7 +56,6 @@ class App extends Component {
                         path="/singleProduct"
                         component={SingleProduct}
                     />
-                   
                 </Switch>
             </div>
         );

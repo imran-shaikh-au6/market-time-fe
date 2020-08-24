@@ -39,7 +39,7 @@ class Register extends Component {
         const data = {
             newUser: newUser,
         };
-        
+
         const rgs = this.props.RegisterUsers(data);
         console.log(rgs);
     };
